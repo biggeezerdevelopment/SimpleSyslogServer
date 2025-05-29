@@ -1,0 +1,15 @@
+server:
+  port: 514
+  log_file: "syslog.log"  # Leave empty for no file logging
+  console_output: true    # Set to false to disable console output
+
+filter:
+  enabled: False          # Set to false to disable all filtering
+  allowed_ips:
+    - "127.0.0.0/8"      # Localhost range
+    - "192.168.0.0/24"   # Local network
+    - "0.0.0.0/0"        # All IPs
+  min_severity: 7        # 0=Emergency, 7=Debug
+  exclude_patterns:
+    - "test"
+    - "debug"
